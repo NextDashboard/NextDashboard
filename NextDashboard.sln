@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Api", "NextDashboard.Api\NextDashboard.Api\NextDashboard.Api.csproj", "{4536D03D-74D5-4593-BDE0-37255C765F95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Web", "NextDashboard.Web\NextDashboard.Web\NextDashboard.Web.csproj", "{68DB8E07-6A5F-40C1-A804-5C084EE3AF2A}"
@@ -12,6 +10,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{30DC9CBC-DEFD-4C21-841B-8B04912D32AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Api.Test", "NextDashboard.Api\NextDashboard.Api.Test\NextDashboard.Api.Test.csproj", "{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{23D1AD08-5C20-48E6-9773-5ACB51A5B131}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
