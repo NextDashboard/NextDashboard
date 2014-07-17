@@ -1,23 +1,19 @@
 ﻿using System.Web.Http;
+using NextDashboard.Api.IoC;
 using Owin;
 
 namespace NextDashboard.Api
 {
     public class Startup
     {
-        // This code configures Web API. The Startup class is specified as a type
-        // parameter in the WebApp.Start method.
-        public void Configuration(IAppBuilder appBuilder)
+        public void Configuration(IAppBuilder app)
         {
-            // Configure Web API for self-host. 
-            HttpConfiguration config = new HttpConfiguration();
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            var config = new HttpConfiguration();
+            config.DependencyResolver = new NinjectResolver(NinjectConfig.CreateKernel());
 
-            appBuilder.UseWebApi(config);
+            config.Routes.MapHttpRoute("default", "api/{controller}/{id}", new {id = RouteParameter.Optional});
+
+            app.UseWebApi(config);
         }
     }
 }

@@ -1,18 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 
 namespace NextDashboard.Api.Contollers
 {
     public class JobsController : ApiController
     {
-        // GET api/values 
-        public IEnumerable<string> Get()
+        private readonly IJobsRepository _jobsRepository;
+
+        public JobsController(IJobsRepository jobsRepository)
         {
-            return new string[] { "value1", "value2" };
+            _jobsRepository = jobsRepository;
+        }
+
+        // GET api/values 
+        public List<Job> Get()
+        {
+         return   _jobsRepository.SelectAll();
         }
     }
 }
