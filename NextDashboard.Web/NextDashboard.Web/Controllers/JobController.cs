@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using NextDashboard.Web.DataContracts;
 
-namespace NextDashboard.Api.Contollers
+namespace NextDashboard.Web.Controllers
 {
-    public class JobsController : ApiController
+    public class JobController : ApiController
     {
         private readonly IJobsRepository _jobsRepository;
 
-        public JobsController(IJobsRepository jobsRepository)
+        public JobController(IJobsRepository jobsRepository)
         {
             _jobsRepository = jobsRepository;
         }
@@ -15,7 +16,7 @@ namespace NextDashboard.Api.Contollers
         // GET api/values 
         public List<Job> Get()
         {
-         return   _jobsRepository.SelectAll();
+            return _jobsRepository.SelectAll();
         }
     }
 }

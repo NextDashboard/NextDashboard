@@ -1,5 +1,13 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "NextDashboard";
 }
 
-<h2>Index</h2>
+<div class="container" ng-controller="GroupController as group">
+    <h1>Next Dashboard</h1>
+    <div class="row" ng-repeat="job in group.jobs">
+        <h3>
+            {{job.name}}
+            <em class="pull-right">{{job.status}}</em>
+        </h3>
+    </div>
+</div>

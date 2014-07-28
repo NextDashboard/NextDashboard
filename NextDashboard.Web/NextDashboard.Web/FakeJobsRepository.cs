@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using NextDashboard.Web.DataContracts;
 
-namespace NextDashboard.Api
+namespace NextDashboard.Web
 {
     public class FakeJobsRepository : IJobsRepository
     {
