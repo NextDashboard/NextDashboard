@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NextDashboard.Api
+namespace NextDashboard.Web.DataContracts
 {
     public interface IJobsRepository
     {
