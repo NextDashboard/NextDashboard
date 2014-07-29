@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Api", "NextDashboard.Api\NextDashboard.Api\NextDashboard.Api.csproj", "{4536D03D-74D5-4593-BDE0-37255C765F95}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{23D1AD08-5C20-48E6-9773-5ACB51A5B131}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Web", "NextDashboard.Web\NextDashboard.Web\NextDashboard.Web.csproj", "{68DB8E07-6A5F-40C1-A804-5C084EE3AF2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Web", "NextDashboard.Web\NextDashboard.Web\NextDashboard.Web.csproj", "{20643CF4-7DD6-410E-A282-5FB52CDCF6FB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{3C3F915B-4D06-46B3-869D-39A01B807BA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Test.Unit", "NextDashboard.Test.Unit\NextDashboard.Test.Unit.csproj", "{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{30DC9CBC-DEFD-4C21-841B-8B04912D32AD}"
 EndProject
@@ -33,14 +38,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4536D03D-74D5-4593-BDE0-37255C765F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4536D03D-74D5-4593-BDE0-37255C765F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4536D03D-74D5-4593-BDE0-37255C765F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4536D03D-74D5-4593-BDE0-37255C765F95}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68DB8E07-6A5F-40C1-A804-5C084EE3AF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68DB8E07-6A5F-40C1-A804-5C084EE3AF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68DB8E07-6A5F-40C1-A804-5C084EE3AF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68DB8E07-6A5F-40C1-A804-5C084EE3AF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20643CF4-7DD6-410E-A282-5FB52CDCF6FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20643CF4-7DD6-410E-A282-5FB52CDCF6FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20643CF4-7DD6-410E-A282-5FB52CDCF6FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20643CF4-7DD6-410E-A282-5FB52CDCF6FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -76,10 +81,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{4536D03D-74D5-4593-BDE0-37255C765F95} = {3C3F915B-4D06-46B3-869D-39A01B807BA7}
-		{68DB8E07-6A5F-40C1-A804-5C084EE3AF2A} = {30DC9CBC-DEFD-4C21-841B-8B04912D32AD}
-		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3} = {3C3F915B-4D06-46B3-869D-39A01B807BA7}
 	EndGlobalSection
 EndGlobal
