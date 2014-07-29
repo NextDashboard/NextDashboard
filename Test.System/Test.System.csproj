@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}</ProjectGuid>
+    <ProjectGuid>{53433A81-BA2A-4794-A406-9F4062209E0D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NextDashboard.Api.Test</RootNamespace>
-    <AssemblyName>NextDashboard.Api.Test</AssemblyName>
+    <RootNamespace>NextDashboard.Test.System</RootNamespace>
+    <AssemblyName>NextDashboard.Test.System</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,13 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentAssertions">
-      <HintPath>..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+      <HintPath>..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>
     <Reference Include="FluentAssertions.Core">
-      <HintPath>..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <HintPath>..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +52,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Test.Integration\Test.Integration.csproj">
+      <Project>{25ed4530-bee4-44b3-950a-4206d3973655}</Project>
+      <Name>Test.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test.Unit\Test.Unit.csproj">
+      <Project>{483b6361-e625-4cc4-88ff-319f198a6d58}</Project>
+      <Name>Test.Unit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI.Console\UI.Console.csproj">
+      <Project>{312a3b9a-9aa2-40bb-b2e7-58d41acefa37}</Project>
+      <Name>UI.Console</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI.Web\UI.Web.csproj">
+      <Project>{723c6532-a318-4cae-818e-d5eebaa93046}</Project>
+      <Name>UI.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
