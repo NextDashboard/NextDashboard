@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{23D1AD08-5C20-48E6-9773-5ACB51A5B131}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,10 +13,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Web", "NextDashboard.Web\NextDashboard.Web\NextDashboard.Web.csproj", "{20643CF4-7DD6-410E-A282-5FB52CDCF6FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Test.Unit", "NextDashboard.Test.Unit\NextDashboard.Test.Unit.csproj", "{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{30DC9CBC-DEFD-4C21-841B-8B04912D32AD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDashboard.Api.Test", "NextDashboard.Api\NextDashboard.Api.Test\NextDashboard.Api.Test.csproj", "{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{72673D46-2F57-4CA8-B64F-A99151C87171}"
 EndProject
@@ -46,10 +42,6 @@ Global
 		{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{104C58DF-BA59-485C-B9B9-BDE3E3575C7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E8F7CDC-94AF-4BE8-A23D-170C4DF42FB3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72673D46-2F57-4CA8-B64F-A99151C87171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72673D46-2F57-4CA8-B64F-A99151C87171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72673D46-2F57-4CA8-B64F-A99151C87171}.Release|Any CPU.ActiveCfg = Release|Any CPU
