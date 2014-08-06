@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using Owin;
 
-namespace UI.Host.Owin
+namespace UI.Host
 {
     public class Startup
     {
