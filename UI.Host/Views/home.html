@@ -1,31 +1,21 @@
 ﻿<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/../Content/styles/bootstrap.min.css" />
-        <script src="/../Content/scripts/angular.min.js"> </script>
-        <title>@Model.title</title>
-    </head>
+<html ng-app="nextDashboard">
+<head>
+    <link rel="stylesheet" type="text/css" href="/../Content/styles/bootstrap.min.css" />
+    <script src="/../Content/scripts/angular.min.js"> </script>
+    <script src="/../Content/scripts/app/main.js"> </script>
+    <title>@Model.title</title>
+</head>
 <body>
-    <header>
-        <!--<h1>@Model.title</h1>-->
-    </header>
-    <!--<section>  CONTENT GOES HERE
-        <h2>Backlog</h2>
-        <ul class="bugs" id="backlog">
-            <li>a bug</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Working</h2>
-        <ul class="bugs" id="working">
-            <li>a bug</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Done</h2>
-        <ul class="bugs" id="done">
-            <li>a bug</li>
-        </ul>
-    </section>-->
+
+    <div class="container" ng-controller="GroupController as group">
+        <h1>Next Dashboard</h1>
+        <div class="row" ng-repeat="job in group.jobs">
+            <h3>
+                {{job.name}}
+                <em class="pull-right">{{job.status}}</em>
+            </h3>
+        </div>
+    </div>
 </body>
 </html>

@@ -94,6 +94,9 @@
     <None Include="Content\scripts\jquery-1.9.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\scripts\app\main.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\styles\bootstrap-theme.css" />
     <Content Include="Content\styles\bootstrap-theme.min.css" />
     <Content Include="Content\styles\bootstrap.css" />
@@ -115,6 +118,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
