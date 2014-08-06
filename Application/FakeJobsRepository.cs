@@ -9,9 +9,12 @@ namespace NextDashboard.Application
         {
             return new List<Job>
             {
-                new Job("Test Job 1"),
-                new Job("Test Job 2"),
-                new Job("Test Job 3")
+                new Job("Test Job 1", "Passing"),
+                new Job("Test Job 2", "25 Completed this week, 9 Pending"),
+                new Job("Test Job 3", "Failing"),
+                new Job("QA TestAutomation", "Failing"),
+                new Job("TP Sprint 3", "3 of 7 Stories Completed"),
+                new Job("Code Reviews", "25 Completed this week, 9 Pending")
             };
         }
     }

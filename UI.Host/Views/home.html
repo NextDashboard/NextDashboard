@@ -8,12 +8,12 @@
 </head>
 <body>
 
-    <div class="container" ng-controller="GroupController as group">
+    <div class="container" ng-controller="GroupController">
         <h1>Next Dashboard</h1>
-        <div class="row" ng-repeat="job in group.jobs">
+        <div class="row" ng-repeat="job in jobs">
             <h3>
-                {{job.name}}
-                <em class="pull-right">{{job.status}}</em>
+                {{job.Name}}
+                <em class="pull-right">{{job.Status}}</em>
             </h3>
         </div>
     </div>
