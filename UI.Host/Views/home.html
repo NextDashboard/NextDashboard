@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="nextDashboard">
+<head>
+    <link rel="stylesheet" type="text/css" href="/../Content/styles/bootstrap.min.css" />
+    <script src="/../Content/scripts/angular.min.js"> </script>
+    <script src="/../Content/scripts/app/main.js"> </script>
+    <title>@Model.title</title>
+</head>
+<body>
+
+    <div class="container" ng-controller="GroupController">
+        <h1>Next Dashboard</h1>
+        <div class="row" ng-repeat="job in jobs">
+            <h3>
+                {{job.Name}}
+                <em class="pull-right">{{job.Status}}</em>
+            </h3>
+        </div>
+    </div>
+</body>
+</html>
