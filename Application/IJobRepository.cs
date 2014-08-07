@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using NextDashboard.Application.DataContracts;
+using NextDashboard.Application.DomainObjects;
 
 namespace NextDashboard.Application
 {
-    public interface IJobsRepository
+    public interface IJobRepository
     {
         List<Job> SelectAll();
     }

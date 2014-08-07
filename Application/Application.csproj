@@ -40,9 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FakeJobsRepository.cs" />
-    <Compile Include="IJobsRepository.cs" />
+    <Compile Include="DomainObjects\JenkinsJob.cs" />
+    <Compile Include="DomainObjects\Job.cs" />
+    <Compile Include="DomainObjects\SampleJob.cs" />
+    <Compile Include="FakeJobRepository.cs" />
+    <Compile Include="IJobRepository.cs" />
     <Compile Include="DataContracts\Job.cs" />
+    <Compile Include="JobRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
