@@ -46,6 +46,7 @@
     <Compile Include="FakeJobRepository.cs" />
     <Compile Include="IJobRepository.cs" />
     <Compile Include="DataContracts\Job.cs" />
+    <Compile Include="JobRefresher.cs" />
     <Compile Include="JobRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

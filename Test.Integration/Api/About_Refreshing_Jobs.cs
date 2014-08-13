@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net.Http;
+using FluentAssertions;
 using Microsoft.Owin.Testing;
+using NextDashboard.Application.DataContracts;
 using NUnit.Framework;
 using TestStack.BDDfy;
 using UI.Host;
@@ -11,7 +13,7 @@ namespace NextDashboard.Test.Integration.Api
     public class About_Refreshing_Jobs
     {
         private TestServer _inMemoryServer;
-
+        private Job _result;
 
         private void GivenTheApiIsRunning()
         {
@@ -20,13 +22,13 @@ namespace NextDashboard.Test.Integration.Api
 
         private void WhenAJobRefreshIsRequested()
         {
-            HttpResponseMessage response = _inMemoryServer.HttpClient.GetAsync("/api/job/Refresh").Result;
-            throw new NotImplementedException();
+            var response = _inMemoryServer.HttpClient.GetAsync("/api/refresh/1").Result;
+            _result = response.Content.ReadAsAsync<Job>().Result;
         }
 
         private void ThenTheJobShouldBeRefreshed()
         {
-            throw new NotImplementedException();
+            _result.Status.Contains("Refreshed").Should().BeTrue();
         }
 
         [Test]

@@ -19,6 +19,7 @@ namespace UI.Host
 
             appBuilder.UseWebApi(config);
             appBuilder.UseNancy();
+            AutoMapperWebConfiguration.Configure();
         }
     }
 }
