@@ -5,6 +5,7 @@ using FluentAssertions;
 using Microsoft.Owin.Testing;
 using NUnit.Framework;
 using NextDashboard.Application.DataContracts;
+using TestStack.BDDfy;
 using UI.Host;
 
 namespace NextDashboard.Test.Integration.Api
@@ -14,23 +15,33 @@ namespace NextDashboard.Test.Integration.Api
     {
         private TestServer _inMemoryServer;
 
-        [SetUp]
-        public void Setup()
+        private IEnumerable<Job> _result;
+
+
+        private void GivenTheApiIsRunning()
         {
             _inMemoryServer = TestServer.Create<Startup>();
         }
-        
-        [Test]
-        public void I_Should_Be_Able_To_Get_A_List_Of_Jobs()
-        {
-            var response = _inMemoryServer.HttpClient.GetAsync("/api/job").Result;
-            var result = response.Content.ReadAsAsync<IEnumerable<Job>>().Result;
 
-            result.Count().Should().BeGreaterThan(0);
+        private void WhenIRequestAListOfJobs()
+        {
+            HttpResponseMessage response = _inMemoryServer.HttpClient.GetAsync("/api/job").Result;
+            _result = response.Content.ReadAsAsync<IEnumerable<Job>>().Result;
         }
 
+        private void ThenIShouldSeeAListOfJobs()
+        {
+            _result.Count().Should().BeGreaterThan(0);
+        }
 
-
+        [Test]
+        public void GettingAListOfJobs()
+        {
+            this.Given(_ => GivenTheApiIsRunning())
+                .When(_ => WhenIRequestAListOfJobs())
+                .Then(_ => ThenIShouldSeeAListOfJobs())
+                .BDDfy();
+        }
 
     }
 }

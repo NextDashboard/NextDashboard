@@ -88,9 +88,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TestStack.BDDfy">
+      <HintPath>..\packages\TestStack.BDDfy.4.0.0\lib\NET40\TestStack.BDDfy.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\About_Getting_Jobs.cs" />
+    <Compile Include="Api\About_Refreshing_Jobs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,10 +105,6 @@
     <ProjectReference Include="..\Application\Application.csproj">
       <Project>{72673D46-2F57-4CA8-B64F-A99151C87171}</Project>
       <Name>Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Test.Unit\Test.Unit.csproj">
-      <Project>{483b6361-e625-4cc4-88ff-319f198a6d58}</Project>
-      <Name>Test.Unit</Name>
     </ProjectReference>
     <ProjectReference Include="..\UI.Host\UI.Host.csproj">
       <Project>{BA0A66F7-5A95-44B8-9E0B-EB9A0C2CAD86}</Project>
