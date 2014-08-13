@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using AutoMapper;
 using NextDashboard.Application;
@@ -18,9 +19,9 @@ namespace UI.Host.Controllers
         // GET api/values 
         public List<Job> Get()
         {
-            Mapper.CreateMap<NextDashboard.Application.DomainObjects.Job, Job>();
             var jobs = Mapper.Map<List<Job>>(_jobRepository.SelectAll());
             return jobs;
         }
+
     }
 }

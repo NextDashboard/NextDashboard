@@ -13,5 +13,10 @@ namespace NextDashboard.Application
                 new JenkinsJob("Code Reviews", "25 Completed this week, 9 Pending")
             };
         }
+
+        public Job Select(int jobId)
+        {
+          return  new JenkinsJob("testRefresh", "Passing");
+        }
     }
 }

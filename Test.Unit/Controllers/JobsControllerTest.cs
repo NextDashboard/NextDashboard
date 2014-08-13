@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
-using NextDashboard.Application;
 using NextDashboard.Application.DataContracts;
 using NUnit.Framework;
 using UI.Host.Controllers;
@@ -20,7 +19,7 @@ namespace NextDashboard.Test.Unit.Controllers
             List<Job> actual = sut.Get();
 
             //Assert
-            actual.GetType().Should().Be(typeof(List<Job>));
+            actual.GetType().Should().Be(typeof (List<Job>));
         }
     }
 }

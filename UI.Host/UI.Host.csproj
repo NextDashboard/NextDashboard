@@ -84,7 +84,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperWebConfiguration.cs" />
     <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\RefreshController.cs" />
     <Compile Include="Owin\HomeModule.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Program.cs" />
