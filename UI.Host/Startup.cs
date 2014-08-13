@@ -1,4 +1,9 @@
 ﻿using System.Web.Http;
+using AutoMapper;
+using NextDashboard.Application;
+using Ninject;
+using Ninject.Web.Common.OwinHost;
+using Ninject.Web.WebApi.OwinHost;
 using Owin;
 
 namespace UI.Host
@@ -17,9 +22,20 @@ namespace UI.Host
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            appBuilder.UseWebApi(config);
+            appBuilder.UseNinjectMiddleware(CreateKernel);
+            appBuilder.UseNinjectWebApi(config);
+
             appBuilder.UseNancy();
             AutoMapperWebConfiguration.Configure();
+        }
+
+        public static IKernel CreateKernel()
+        {
+            var kernel = new StandardKernel();
+
+            kernel.Bind<IJobRepository>().To<FakeJobRepository>();
+            kernel.Bind<IMappingEngine>().ToMethod(context => Mapper.Engine);
+            return kernel;
         }
     }
 }
