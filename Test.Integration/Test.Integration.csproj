@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\About_Getting_Jobs.cs" />
+    <Compile Include="Api\About_Jenkins_Jobs.cs" />
     <Compile Include="Api\About_Refreshing_Jobs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

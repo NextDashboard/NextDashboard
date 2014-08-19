@@ -13,10 +13,7 @@ namespace UI.Host.Controllers
             var jobRepository = new JobRepository();
             NextDashboard.Application.DomainObjects.Job job = jobRepository.Select(id);
 
-            var refresher = new JobRefresher();
-            NextDashboard.Application.DomainObjects.Job refreshedJob = refresher.Refresh(job);
-
-            var jobDto = Mapper.Map<Job>(refreshedJob);
+            Job jobDto = Mapper.Map<Job>(job.Refresh());
             return jobDto;
         }
     }

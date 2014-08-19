@@ -30,8 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Test.Unit\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +51,8 @@
     <Compile Include="FakeJobRepository.cs" />
     <Compile Include="IJobRepository.cs" />
     <Compile Include="DataContracts\Job.cs" />
+    <Compile Include="Jobs\Jenkins\JenkinsBuildResponse.cs" />
+    <Compile Include="Jobs\Jenkins\JenkinsJobRefresher.cs" />
     <Compile Include="JobRefresher.cs" />
     <Compile Include="JobRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

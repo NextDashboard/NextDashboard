@@ -1,13 +1,9 @@
-﻿using NextDashboard.Application.DomainObjects;
+using NextDashboard.Application.DomainObjects;
 
 namespace NextDashboard.Application
 {
-    public class JobRefresher
+    public abstract class JobRefresher<T> where T:Job
     {
-        public Job Refresh(Job job)
-        {
-            job.Status = "Refreshed";
-            return job;
-        }
+        public abstract T Refresh(T job);
     }
 }
