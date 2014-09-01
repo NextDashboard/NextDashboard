@@ -10,8 +10,9 @@
 
         public string Name { get; set; }
         public string Status { get; set; }
-     
-}
+
+        public abstract Job Refresh();
+    }
 
     public interface IJob
     {
