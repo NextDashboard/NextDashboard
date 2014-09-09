@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using NextDashboard.Application.DomainObjects;
+using NextDashboard.Application.Jobs.Jenkins;
 
-namespace NextDashboard.Application
+namespace NextDashboard.Application.Repository
 {
     public class FakeJobRepository : IJobRepository
     {

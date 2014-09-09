@@ -6,6 +6,10 @@
         {
         }
 
-    
+
+        public override Job Refresh()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

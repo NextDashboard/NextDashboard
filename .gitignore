@@ -5,3 +5,5 @@ packages/
 _ReSharper*
 *.suo
 /.project
+
+TestResult.xml
