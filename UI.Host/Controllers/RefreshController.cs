@@ -2,6 +2,7 @@
 using AutoMapper;
 using NextDashboard.Application;
 using NextDashboard.Application.DataContracts;
+using NextDashboard.Application.Repository;
 
 namespace UI.Host.Controllers
 {

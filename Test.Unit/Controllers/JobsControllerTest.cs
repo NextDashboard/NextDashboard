@@ -4,6 +4,7 @@ using FluentAssertions;
 using Moq;
 using NextDashboard.Application;
 using NextDashboard.Application.DataContracts;
+using NextDashboard.Application.Repository;
 using NUnit.Framework;
 using UI.Host.Controllers;
 

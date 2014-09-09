@@ -9,6 +9,10 @@ namespace NextDashboard.Application.DomainObjects
         public readonly string JenkinsJobName;
         private readonly JobRefresher<JenkinsJob> _jobRefresher;
 
+        public JenkinsJob()
+        {
+            
+        }
         public JenkinsJob(string name, string status, string jenkinsBaseUrl, string jenkinsJobName, JobRefresher<JenkinsJob> jobRefresher)
             : base(name, status)
         

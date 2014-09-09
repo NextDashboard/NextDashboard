@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NextDashboard.Application.DomainObjects;
 
-namespace NextDashboard.Application
+namespace NextDashboard.Application.Repository
 {
     public class JobRepository : IJobRepository
     {

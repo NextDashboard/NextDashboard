@@ -2,6 +2,10 @@
 {
     public abstract class Job : IJob
     {
+        protected Job()
+        {
+            
+        }
         protected Job(string name,string status )
         {
             Name = name;
