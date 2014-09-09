@@ -1,7 +1,7 @@
-﻿using NextDashboard.Application.Http;
-using NextDashboard.Application.Jobs.Jenkins;
+﻿using NextDashboard.Application.DomainObjects;
+using NextDashboard.Application.Http;
 
-namespace NextDashboard.Application.DomainObjects
+namespace NextDashboard.Application.Jobs.Jenkins
 {
     public class JenkinsJob : Job
     {

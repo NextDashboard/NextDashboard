@@ -1,6 +1,5 @@
 using System;
 using System.Net.Http;
-using NextDashboard.Application.Jobs.Jenkins;
 
 namespace NextDashboard.Application.Http
 {
@@ -21,9 +20,8 @@ namespace NextDashboard.Application.Http
 
         public string GetResponse(string address)
         {
-            var response = _client.GetAsync(address).Result;
+            HttpResponseMessage response = _client.GetAsync(address).Result;
             return response.Content.ReadAsStringAsync().Result;
         }
-
     }
 }

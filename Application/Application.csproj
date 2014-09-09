@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DomainObjects\JenkinsJob.cs" />
+    <Compile Include="Jobs\Jenkins\JenkinsJob.cs" />
     <Compile Include="DomainObjects\Job.cs" />
     <Compile Include="DomainObjects\SampleJob.cs" />
     <Compile Include="Repository\FakeJobRepository.cs" />

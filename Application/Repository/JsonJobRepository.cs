@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
 using NextDashboard.Application.DomainObjects;
+using NextDashboard.Application.Jobs.Jenkins;
 
 namespace NextDashboard.Application.Repository
 {

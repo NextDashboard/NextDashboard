@@ -1,4 +1,5 @@
 ﻿using NextDashboard.Application.DomainObjects;
+using NextDashboard.Application.Jobs.Jenkins;
 using NUnit.Framework;
 
 namespace NextDashboard.Test.Integration.Api
