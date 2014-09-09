@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using AutoMapper;
 using NextDashboard.Application;
@@ -24,6 +23,5 @@ namespace UI.Host.Controllers
             var jobs = _mappingEngine.Map<List<Job>>(_jobRepository.SelectAll());
             return jobs;
         }
-
     }
 }

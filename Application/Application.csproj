@@ -51,6 +51,8 @@
     <Compile Include="FakeJobRepository.cs" />
     <Compile Include="IJobRepository.cs" />
     <Compile Include="DataContracts\Job.cs" />
+    <Compile Include="Http\HttpClientWrapper.cs" />
+    <Compile Include="Http\IHttpClientWrapper.cs" />
     <Compile Include="Jobs\Jenkins\JenkinsBuildResponse.cs" />
     <Compile Include="Jobs\Jenkins\JenkinsJobRefresher.cs" />
     <Compile Include="JobRefresher.cs" />

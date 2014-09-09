@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Moq;
+using NextDashboard.Application.Http;
 using NUnit.Framework;
 using Newtonsoft.Json;
 using NextDashboard.Application.DomainObjects;
