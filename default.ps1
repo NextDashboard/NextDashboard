@@ -14,6 +14,8 @@ properties {
 }
 
 task Setup {
+	iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+	exec {cmd.exe /c "SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"}
 }
 
 task Build {

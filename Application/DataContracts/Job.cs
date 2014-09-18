@@ -5,9 +5,11 @@ namespace NextDashboard.Application.DataContracts
     [DataContract]
     public class Job
     {
-        public Job(){}
+        public Job()
+        {
+        }
 
-        public Job(string name,string status)
+        public Job(string name, string status)
         {
             Name = name;
             Status = status;
@@ -19,6 +21,7 @@ namespace NextDashboard.Application.DataContracts
         [DataMember]
         public string Status { get; set; }
 
-      
+        [DataMember]
+        public string Type { get; set; }
     }
 }

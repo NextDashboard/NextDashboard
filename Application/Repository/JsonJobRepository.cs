@@ -24,6 +24,13 @@ namespace NextDashboard.Application.Repository
             return jobs.Select(x => (Job) x).ToList();
         }
 
+        public Job Select(int jobId)
+        {
+            string json = File.ReadAllText(FileStore);
+            var jobs = JsonConvert.DeserializeObject<List<JenkinsJob>>(json);
+            return jobs[jobId];
+        }
+
         private void SeedFileWithData()
         {
             string seedData = JsonConvert.SerializeObject(new FakeJobRepository().SelectAll());

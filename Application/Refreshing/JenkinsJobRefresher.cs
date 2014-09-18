@@ -2,26 +2,25 @@
 using Newtonsoft.Json;
 using NextDashboard.Application.DomainObjects;
 using NextDashboard.Application.Http;
+using NextDashboard.Application.Jobs.Jenkins;
 
-namespace NextDashboard.Application.Jobs.Jenkins
+namespace NextDashboard.Application.Refreshing
 {
-    public class JenkinsJobRefresher : JobRefresher<JenkinsJob>
+    public class JenkinsJobRefresher : IJobRefresher
     {
         private readonly IHttpClientWrapper _httpClientWrapper;
-        private string _baseUrl;
-        private string _jobName;
 
         public JenkinsJobRefresher(IHttpClientWrapper httpClientWrapper)
         {
             _httpClientWrapper = httpClientWrapper;
         }
 
-        public override JenkinsJob Refresh(JenkinsJob job)
+        public Job RefreshJob(Job job)
         {
-            _jobName = job.JenkinsJobName;
-            _baseUrl = job.JenkinsBaseUrl;
-            _httpClientWrapper.BaseAddress = new Uri(_baseUrl);
-            var jobResponse = _httpClientWrapper.GetResponse(string.Format("job/{0}/lastBuild/api/json", _jobName));
+            var jenkinsJob = (JenkinsJob) job;
+            _httpClientWrapper.BaseAddress = new Uri(jenkinsJob.JenkinsBaseUrl);
+            var address = string.Format("job/{0}/lastBuild/api/json", jenkinsJob.JenkinsJobName);
+            var jobResponse = _httpClientWrapper.GetResponse(address);
             var buildResponse = JsonConvert.DeserializeObject<JenkinsBuildResponse>(jobResponse);
             job.Status = buildResponse.result;
             return job;

@@ -10,7 +10,7 @@ using UI.Host;
 namespace NextDashboard.Test.Integration.Api
 {
     [TestFixture]
-    public class About_Refreshing_Jobs
+    public class About_Refreshing_Jobs_With_InMemory_Owin
     {
         private TestServer _inMemoryServer;
         private Job _result;

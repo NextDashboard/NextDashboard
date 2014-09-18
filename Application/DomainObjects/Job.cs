@@ -1,6 +1,6 @@
 ﻿namespace NextDashboard.Application.DomainObjects
 {
-    public abstract class Job : IJob
+    public abstract class Job 
     {
         protected Job()
         {
@@ -14,12 +14,7 @@
 
         public string Name { get; set; }
         public string Status { get; set; }
-
-        public abstract Job Refresh();
+        public string Type { get; set; }
     }
 
-    public interface IJob
-    {
-     
-    }
 }

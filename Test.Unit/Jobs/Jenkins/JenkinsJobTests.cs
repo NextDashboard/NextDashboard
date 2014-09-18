@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
-using Moq;
-using NextDashboard.Application;
-using NextDashboard.Application.DomainObjects;
+﻿using FluentAssertions;
 using NextDashboard.Application.Jobs.Jenkins;
 using NUnit.Framework;
 
@@ -17,21 +9,35 @@ namespace NextDashboard.Test.Unit.Jobs.Jenkins
     {
         
         [Test]
-        public void Refreshing_A_Jenkins_Job_Should_Return_A_New_Instance_Of_A_Job()
+        public void Creating_A_Default_Job_With_Should_Have_A_Blank_Url()
         {
-            //Arrange
-            var jobRefresher = new Mock<JobRefresher<JenkinsJob>>();
-            jobRefresher.Setup(x => x.Refresh(It.IsAny<JenkinsJob>())).Returns(
-                new JenkinsJob(){Status = "Refreshed!!"}
-                );
-            var job = new JenkinsJob("Dan's Job", "Passing", "10.1.1.1", "Dan's Job", jobRefresher.Object);
-
-            //Act
-            var refreshedJob = job.Refresh();
+            //Arrange, Act
+            var job = new JenkinsJob("TheName","Passing");
 
             //Assert
-            refreshedJob.Should().BeOfType<JenkinsJob>();
+            job.JenkinsBaseUrl.Should().BeNullOrEmpty();
 
+        }
+
+        [Test]
+        public void Creating_A_Default_Job_With_Should_Have_A_Blank_JenkinsJobName()
+        {
+            //Arrange, Act
+            var job = new JenkinsJob("TheName", "Passing");
+
+            //Assert
+            job.JenkinsJobName.Should().BeNullOrEmpty();
+
+        }
+
+        [Test]
+        public void I_Should_Be_Able_To_Create_A_Jenkins_Jobs_By_An_Empty_Constructor_For_Automapper()
+        {
+            //Arrange, Act
+            var job = new JenkinsJob();
+
+            //Assert
+            job.Should().BeOfType<JenkinsJob>();
         }
     }
 }
