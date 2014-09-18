@@ -45,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Refreshing\IJobRefresher.cs" />
+    <Compile Include="Refreshing\JenkinsJobRefresher.cs" />
+    <Compile Include="Refreshing\JobRefresherFactory.cs" />
     <Compile Include="Jobs\Jenkins\JenkinsJob.cs" />
     <Compile Include="DomainObjects\Job.cs" />
     <Compile Include="DomainObjects\SampleJob.cs" />
@@ -54,12 +58,12 @@
     <Compile Include="Http\HttpClientWrapper.cs" />
     <Compile Include="Http\IHttpClientWrapper.cs" />
     <Compile Include="Jobs\Jenkins\JenkinsBuildResponse.cs" />
-    <Compile Include="Jobs\Jenkins\JenkinsJobRefresher.cs" />
-    <Compile Include="JobRefresher.cs" />
     <Compile Include="Repository\JobRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\JsonJobRepository.cs" />
+    <Compile Include="Refreshing\SampleJobRefresher.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
