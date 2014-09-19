@@ -1,6 +1,8 @@
 ﻿using System.Web.Http;
 using AutoMapper;
 using NextDashboard.Application;
+using NextDashboard.Application.Http;
+using NextDashboard.Application.Refreshing;
 using NextDashboard.Application.Repository;
 using Ninject;
 using Ninject.Web.Common.OwinHost;
@@ -35,6 +37,8 @@ namespace UI.Host
             var kernel = new StandardKernel();
 
             kernel.Bind<IJobRepository>().To<JsonJobRepository>();
+            kernel.Bind<IJobRefresherFactory>().To<JobRefresherFactory>();
+            kernel.Bind<IHttpClientWrapper>().To<HttpClientWrapper>();
             kernel.Bind<IMappingEngine>().ToMethod(context => Mapper.Engine);
             return kernel;
         }

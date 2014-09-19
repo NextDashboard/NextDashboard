@@ -74,9 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\JobsControllerTest.cs" />
+    <Compile Include="Controllers\RefreshControllerTests.cs" />
     <Compile Include="DataContracts\JobTests.cs" />
     <Compile Include="Jobs\Jenkins\JenkinsJobTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Refreshing\JenkinsJobRefresherTests.cs" />
     <Compile Include="Refreshing\JobRefresherFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Refreshing\IJobRefresher.cs" />
+    <Compile Include="Refreshing\IJobRefresherFactory.cs" />
     <Compile Include="Refreshing\JenkinsJobRefresher.cs" />
     <Compile Include="Refreshing\JobRefresherFactory.cs" />
     <Compile Include="Jobs\Jenkins\JenkinsJob.cs" />
