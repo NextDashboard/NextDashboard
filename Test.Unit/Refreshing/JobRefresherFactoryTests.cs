@@ -38,5 +38,7 @@ namespace NextDashboard.Test.Unit.Refreshing
             var refresherFactory = new JobRefresherFactory(http.Object);
             return refresherFactory.GetJobRresher(jobType);
         }
+
+
     }
 }

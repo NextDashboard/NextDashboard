@@ -13,9 +13,12 @@ namespace NextDashboard.Application.Repository
 
         public JsonJobRepository()
         {
-            if (!File.Exists(FileStore))
-                SeedFileWithData();
+            if (File.Exists(FileStore))
+                File.Delete(FileStore);
+            SeedFileWithData();
         }
+
+
 
         public List<Job> SelectAll()
         {

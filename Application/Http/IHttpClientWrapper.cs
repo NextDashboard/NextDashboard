@@ -6,5 +6,6 @@ namespace NextDashboard.Application.Http
     {
         Uri BaseAddress { get; set; }
         string GetResponse(string address);
+        void SetHeaderUserNameAndPassword(string username,string password);
     }
 }

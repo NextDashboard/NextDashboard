@@ -18,6 +18,7 @@ namespace NextDashboard.Test.Integration.Application.Repository
                 File.Delete(FileStore);
             
             //Act
+            // ReSharper disable once UnusedVariable
             var jsonJobRepository = new JsonJobRepository();
             
             //Assert
