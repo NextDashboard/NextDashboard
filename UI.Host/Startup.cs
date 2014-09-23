@@ -1,6 +1,8 @@
 ﻿using System.Web.Http;
+using System.Web.Routing;
 using AutoMapper;
-using NextDashboard.Application;
+using Microsoft.AspNet.SignalR;
+using Microsoft.Owin.Cors;
 using NextDashboard.Application.Http;
 using NextDashboard.Application.Refreshing;
 using NextDashboard.Application.Repository;
@@ -27,7 +29,10 @@ namespace UI.Host
 
             appBuilder.UseNinjectMiddleware(CreateKernel);
             appBuilder.UseNinjectWebApi(config);
-
+        
+            appBuilder.UseCors(CorsOptions.AllowAll);
+            var configuration = new HubConfiguration {EnableDetailedErrors = true, EnableJSONP = true};
+            appBuilder.MapSignalR("/signalr",configuration);
             appBuilder.UseNancy();
             AutoMapperWebConfiguration.Configure();
         }
@@ -43,4 +48,5 @@ namespace UI.Host
             return kernel;
         }
     }
+ 
 }
