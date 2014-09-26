@@ -10,6 +10,9 @@
         $(function () {
             $.connection.hub.url = "http://localhost:9000/signalr";
             var chat = $.connection.myHub;
+            $.connection.hub.logging = true;
+            $.connection.hub.start().done(function () {
+            });
         });
     </script>
 
@@ -27,9 +30,12 @@
             <h3>
                 {{job.Name}}
                 <em class="pull-right">{{job.Status}}</em>
-                <button class="btn btn-primary">Refresh</button>
+                <button class="btn btn-primary" ng-click='refresh()'>Refresh</button>
             </h3>
         </div>
     </div>
+    
+  
+
 </body>
 </html>

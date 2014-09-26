@@ -136,6 +136,7 @@
     <Compile Include="AutoMapperWebConfiguration.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\RefreshController.cs" />
+    <Compile Include="Hubs\RefreshHub.cs" />
     <Compile Include="Owin\HomeModule.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Program.cs" />
@@ -193,9 +194,7 @@
       <Name>Application</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Hubs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
