@@ -17,7 +17,7 @@
             console.log("Todo Wire up refresh here");
             //Todo Wire up refresh here
             var chat = $.connection.refreshHub;
-            chat.server.refreshJob('');
+            chat.server.refreshJob('1');
             $http.get("/api/refresh/1").then(function (response) {
                 console.log('refreshed!');
                 console.log(response.data);
