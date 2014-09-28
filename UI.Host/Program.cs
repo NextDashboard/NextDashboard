@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Owin.Hosting;
-using UI.Host.Owin;
 
 namespace UI.Host
 {
@@ -8,7 +7,7 @@ namespace UI.Host
     {
         private static void Main(string[] args)
         {
-            string baseAddress = "http://localhost:9000/";
+            const string baseAddress = "http://localhost:9000/";
 
             using (WebApp.Start<Startup>(baseAddress))
             {
