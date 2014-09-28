@@ -18,7 +18,7 @@ task Setup {
 	exec {cmd.exe /c "SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"}
 }
 
-task Build {
+task Build -depends Restore-NugetPackages {
   msbuild $MSBuildArgs NextDashboard.sln
 }
 
@@ -29,5 +29,8 @@ task Unit-Test  -Alias UT {
   exec {
 		& $nunitPath\nunit-console.exe $test_dir\$unitTestAssembly /nologo /nodots /xml=TestResult.xml    
 	}
-  
+}
+
+task Restore-NugetPackages {
+	& $base_dir\.nuget\NuGet.exe restore NextDashboard.sln
 }
