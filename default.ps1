@@ -18,6 +18,10 @@ task Setup {
 	exec {cmd.exe /c "SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"}
 }
 
+task Clean {
+  Get-ChildItem . -Include bin,obj -Recurse -Force | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+}
+
 task Build -depends Restore-NugetPackages {
   msbuild $MSBuildArgs NextDashboard.sln
 }
