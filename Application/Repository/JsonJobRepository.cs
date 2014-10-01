@@ -13,8 +13,8 @@ namespace NextDashboard.Application.Repository
 
         public JsonJobRepository()
         {
-            if (File.Exists(FileStore))
-                File.Delete(FileStore);
+            if (File.Exists(FileStore)) return;
+            //File.Delete(FileStore);
             SeedFileWithData();
         }
 
@@ -22,22 +22,28 @@ namespace NextDashboard.Application.Repository
 
         public List<Job> SelectAll()
         {
-            string json = File.ReadAllText(FileStore);
+            string json;
+            using (var sr = new StreamReader(FileStore))
+            {
+                json = sr.ReadToEnd();
+            }
+
             var jobs = JsonConvert.DeserializeObject<List<JenkinsJob>>(json);
             return jobs.Select(x => (Job) x).ToList();
         }
 
         public Job Select(int jobId)
         {
-            string json = File.ReadAllText(FileStore);
-            var jobs = JsonConvert.DeserializeObject<List<JenkinsJob>>(json);
-            return jobs[jobId];
+          return  SelectAll()[jobId];
         }
 
         private void SeedFileWithData()
         {
-            string seedData = JsonConvert.SerializeObject(new FakeJobRepository().SelectAll());
-            File.WriteAllText(FileStore, seedData);
+            var seedData = JsonConvert.SerializeObject(new FakeJobRepository().SelectAll());
+            using (var sw = new StreamWriter(FileStore))
+            {
+                sw.Write(seedData);
+            }
         }
     }
 }

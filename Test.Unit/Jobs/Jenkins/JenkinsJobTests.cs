@@ -9,10 +9,10 @@ namespace NextDashboard.Test.Unit.Jobs.Jenkins
     {
         
         [Test]
-        public void Creating_A_Default_Job_With_Should_Have_A_Blank_Url()
+        public void Creating_A_Default_Job_Should_Have_A_Blank_Url()
         {
             //Arrange, Act
-            var job = new JenkinsJob("TheName","Passing");
+            var job = GetJenkinsJob();
 
             //Assert
             job.JenkinsBaseUrl.Should().BeNullOrEmpty();
@@ -20,10 +20,10 @@ namespace NextDashboard.Test.Unit.Jobs.Jenkins
         }
 
         [Test]
-        public void Creating_A_Default_Job_With_Should_Have_A_Blank_JenkinsJobName()
+        public void Creating_A_Default_Job_Should_Have_A_Blank_JenkinsJobName()
         {
             //Arrange, Act
-            var job = new JenkinsJob("TheName", "Passing");
+            var job = GetJenkinsJob();
 
             //Assert
             job.JenkinsJobName.Should().BeNullOrEmpty();
@@ -38,6 +38,11 @@ namespace NextDashboard.Test.Unit.Jobs.Jenkins
 
             //Assert
             job.Should().BeOfType<JenkinsJob>();
+        }
+
+        private JenkinsJob GetJenkinsJob()
+        {
+            return new JenkinsJob("1", "TheName", "Passing");
         }
     }
 }
