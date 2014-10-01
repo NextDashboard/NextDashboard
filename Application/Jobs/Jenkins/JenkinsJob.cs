@@ -29,5 +29,17 @@ namespace NextDashboard.Application.Jobs.Jenkins
             : this(name, status, string.Empty, string.Empty, string.Empty, string.Empty)
         {
         }
+
+        public override string ToString()
+        {
+            return
+                string.Format(
+                    "\tName: {0} \n\r\tStatus :{1} \n\r\tJenkinsJobName: {2} \n\r\tJenkinsBaseUrl: {3} \n\r\tUsername: {4}", 
+                    Name,
+                    Status, 
+                    JenkinsJobName, 
+                    JenkinsBaseUrl, 
+                    Username);
+        }
     }
 }

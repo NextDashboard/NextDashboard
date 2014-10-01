@@ -23,9 +23,13 @@ namespace UI.Host.Hubs
         public void RefreshJob(string jobId)
         {
             _logger.Info(string.Format("Refreshing Job: {0} for client {1}", jobId, Context.ConnectionId));
+            
             var job = _repository.Select(Int32.Parse(jobId));
             var refresher = _jobRefresherFactory.GetJobRresher(Constants.Jobs.Jenkins);
             var refreshedJob = refresher.RefreshJob(job);
+            
+            _logger.Info(string.Format("Job {0} refreshed sending status {1} to client client {2}. ", jobId, refreshedJob.Status, Context.ConnectionId));
+            
             Clients.Caller.addNewMessageToPage(refreshedJob.Status);
         }
     }
