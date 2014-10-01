@@ -1,4 +1,5 @@
-﻿using NextDashboard.Application.DomainObjects;
+﻿using System;
+using NextDashboard.Application.DomainObjects;
 
 namespace NextDashboard.Application.Jobs.Jenkins
 {
@@ -13,8 +14,8 @@ namespace NextDashboard.Application.Jobs.Jenkins
         {
         }
 
-        public JenkinsJob(string name, string status, string jenkinsBaseUrl, string jenkinsJobName, string username, string apiToken)
-            : base(name, status)
+        public JenkinsJob(string id, string name, string status, string jenkinsBaseUrl, string jenkinsJobName, string username, string apiToken)
+            : base(name, status, id)
 
         {
             JenkinsBaseUrl = jenkinsBaseUrl;
@@ -25,8 +26,8 @@ namespace NextDashboard.Application.Jobs.Jenkins
         }
 
 
-        public JenkinsJob(string name, string status)
-            : this(name, status, string.Empty, string.Empty, string.Empty, string.Empty)
+        public JenkinsJob(string id, string name, string status)
+            : this(id, name, status, string.Empty, string.Empty, string.Empty, string.Empty)
         {
         }
 
