@@ -30,7 +30,7 @@ namespace UI.Host.Hubs
             
             _logger.Info(string.Format("Job {0} refreshed sending status {1} to client client {2}. ", jobId, refreshedJob.Status, Context.ConnectionId));
             
-            Clients.Caller.addNewMessageToPage(refreshedJob.Status);
+            Clients.Caller.addNewMessageToPage(refreshedJob.Id, refreshedJob.Status);
         }
     }
 }

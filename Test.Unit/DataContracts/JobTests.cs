@@ -9,11 +9,12 @@ namespace NextDashboard.Test.Unit.DataContracts
     {
         private const string JobName = "Dan's Job";
         private const string Status = "Passing";
+        private const string Id = "1";
 
 
         public Job CreateJob()
         {
-            return new Job(JobName, Status);
+            return new Job(Id,JobName, Status);
         }
 
         [Test]

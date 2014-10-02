@@ -34,7 +34,7 @@ namespace NextDashboard.Application.Repository
 
         public Job Select(int jobId)
         {
-          return  SelectAll()[jobId];
+          return  SelectAll().First(x=> x.Id.Equals(jobId.ToString()));
         }
 
         private void SeedFileWithData()

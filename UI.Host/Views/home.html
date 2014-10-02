@@ -11,9 +11,12 @@
             $.connection.hub.url = "http://localhost:9000/signalr";
             var chat = $.connection.refreshHub;
 
-            chat.client.addNewMessageToPage = function (message) {
+            chat.client.addNewMessageToPage = function (id, status) {
                 // Add the message to the page. 
-                console.log(message);
+                console.log(id + status);
+                $jobsList = $('#job_'+id).find("em");
+
+                $jobsList.html("<em class='pull-right'>" + status + "</em>");
               
             };
 
@@ -33,14 +36,18 @@
 
     <div class="container" ng-controller="GroupController">
         <h1>Next Dashboard</h1>
-        <div class="row" ng-repeat="job in jobs">
-            <h3>
-                {{job.Name}}
+        <div class="row jobsList" ng-repeat="job in jobs">
+            
+            <div class="jobRow" id='job_{{job.Id}}'>
+                {{job.Name}} Id:  {{job.Id}}
                 <em class="pull-right">{{job.Status}}</em>
-                <button class="btn btn-primary" ng-click='refresh()'>Refresh</button>
-            </h3>
+                <button class="btn btn-primary" ng-click="refresh(job.Id)">Refresh</button>
+            </div>
+
         </div>
+        <ul id="discussion"></ul>
     </div>
+
     
   
 

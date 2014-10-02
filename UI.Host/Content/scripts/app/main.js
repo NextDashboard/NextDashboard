@@ -13,16 +13,11 @@
             $scope.jobs = response.data;
         });
 
-        $scope.refresh = function () {
-            console.log("Todo Wire up refresh here");
-            //Todo Wire up refresh here
+        $scope.refresh = function (value) {
             var chat = $.connection.refreshHub;
-            chat.server.refreshJob('1');
-            $http.get("/api/refresh/1").then(function (response) {
-                console.log('refreshed!');
-                console.log(response.data);
-            });
-
+            console.log(value);
+            chat.server.refreshJob(value);
+         
         }
     });
 })();

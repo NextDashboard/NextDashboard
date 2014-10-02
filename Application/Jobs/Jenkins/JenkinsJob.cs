@@ -1,5 +1,4 @@
-﻿using System;
-using NextDashboard.Application.DomainObjects;
+﻿using NextDashboard.Application.DomainObjects;
 
 namespace NextDashboard.Application.Jobs.Jenkins
 {

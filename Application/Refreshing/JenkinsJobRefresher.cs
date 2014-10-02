@@ -26,6 +26,9 @@ namespace NextDashboard.Application.Refreshing
             
             _httpClientWrapper.BaseAddress = new Uri(jenkinsJob.JenkinsBaseUrl);
             var address = string.Format("job/{0}/lastBuild/api/json", jenkinsJob.JenkinsJobName);
+
+            _logger.Trace("Accessing url {0}", address);
+
             _httpClientWrapper.SetHeaderUserNameAndPassword(jenkinsJob.Username, jenkinsJob.ApiToken);
             var jobResponse = _httpClientWrapper.GetResponse(address);
             var buildResponse = JsonConvert.DeserializeObject<JenkinsBuildResponse>(jobResponse);
