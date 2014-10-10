@@ -8,9 +8,10 @@ namespace UI.Host
     internal class Program
     {
         private static readonly ILogger _logger = new LoggerAdapter(LogManager.GetCurrentClassLogger());
+        static readonly IConfigurationManager _configurationManager = new ConfigurationManagerWrapper();
         private static void Main(string[] args)
         {
-            const string baseAddress = "http://localhost:9000/";
+            var baseAddress = _configurationManager.GetSetting("OwinEndPoint");
 
             using (WebApp.Start<Startup>(baseAddress))
             {
@@ -18,5 +19,7 @@ namespace UI.Host
                 Console.ReadLine();
             }
         }
+
+
     }
 }

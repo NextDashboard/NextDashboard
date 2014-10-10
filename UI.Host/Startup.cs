@@ -1,10 +1,6 @@
 ﻿using System.Web.Http;
-using AutoMapper;
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Cors;
-using NextDashboard.Application.Http;
-using NextDashboard.Application.Refreshing;
-using NextDashboard.Application.Repository;
 using Ninject;
 using Ninject.Web.Common.OwinHost;
 using Ninject.Web.WebApi.OwinHost;

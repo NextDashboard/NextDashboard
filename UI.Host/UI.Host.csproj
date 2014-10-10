@@ -151,9 +151,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperWebConfiguration.cs" />
+    <Compile Include="ConfigurationManagerWrapper.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\RefreshController.cs" />
     <Compile Include="Hubs\RefreshHub.cs" />
+    <Compile Include="IConfigurationManager.cs" />
     <Compile Include="Owin\HomeModule.cs" />
     <Compile Include="IoC\SignalRNinjectDependencyResolver.cs" />
     <Compile Include="IoC\StandardModule.cs" />
