@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/hxyycpo7f9uvpf3x)](https://ci.appveyor.com/project/danblack101/nextdashboard)
+Nextdashboard collects and displays information from disparate systems in dashboard format. E.g build health, open tickets etc
 
 [On Trello](https://trello.com/b/NzcXbf65/dashboard)
 
