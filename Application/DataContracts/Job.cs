@@ -1,4 +1,5 @@
 using System.Runtime.Serialization;
+using NextDashboard.Application.DomainObjects;
 
 namespace NextDashboard.Application.DataContracts
 {
@@ -9,23 +10,27 @@ namespace NextDashboard.Application.DataContracts
         {
         }
 
-        public Job(string id, string name, string status)
+        public Job(string id, string name, string statusDetail, JobStatus status)
         {
             Name = name;
-            Status = status;
+            StatusDetail = statusDetail;
             Id = id;
+            Status = status;
         }
 
         [DataMember]
         public string Name { get; set; }
 
         [DataMember]
-        public string Status { get; set; }
+        public string StatusDetail { get; set; }
 
         [DataMember]
         public string Type { get; set; }
 
         [DataMember]
         public string Id { get; set; }
+
+        [DataMember]
+        public JobStatus Status { get; set; }
     }
 }

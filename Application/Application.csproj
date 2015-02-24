@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="DomainObjects\JobStatus.cs" />
     <Compile Include="Refreshing\IJobRefresher.cs" />
     <Compile Include="Refreshing\IJobRefresherFactory.cs" />
     <Compile Include="Refreshing\JenkinsJobRefresher.cs" />

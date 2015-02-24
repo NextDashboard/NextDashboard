@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
-using NextDashboard.Application.DataContracts;
 using NUnit.Framework;
+using NextDashboard.Application.DomainObjects;
+using Job = NextDashboard.Application.DataContracts.Job;
+
 
 namespace NextDashboard.Test.Unit.DataContracts
 {
@@ -8,13 +10,14 @@ namespace NextDashboard.Test.Unit.DataContracts
     public class JobTests
     {
         private const string JobName = "Dan's Job";
-        private const string Status = "Passing";
+        private const string StatusDetail = "Passing";
+        private const JobStatus Status = JobStatus.Passing;
         private const string Id = "1";
 
 
         public Job CreateJob()
         {
-            return new Job(Id,JobName, Status);
+            return new Job(Id, JobName, StatusDetail, Status);
         }
 
         [Test]
@@ -36,7 +39,7 @@ namespace NextDashboard.Test.Unit.DataContracts
             Job job = CreateJob();
 
             //Assert
-            job.Status.Should().Be(Status);
+            job.StatusDetail.Should().Be(StatusDetail);
         }
     }
 }

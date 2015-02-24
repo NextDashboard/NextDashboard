@@ -32,9 +32,9 @@ namespace NextDashboard.Application.Refreshing
             _httpClientWrapper.SetHeaderUserNameAndPassword(jenkinsJob.Username, jenkinsJob.ApiToken);
             var jobResponse = _httpClientWrapper.GetResponse(address);
             var buildResponse = JsonConvert.DeserializeObject<JenkinsBuildResponse>(jobResponse);
-            
-            job.Status = buildResponse.result;
-            _logger.Trace("Jenkins job Refresh complete with status {0}", job.Status);
+
+            job.StatusDetail = buildResponse.result;
+            _logger.Trace("Jenkins job Refresh complete with status {0}", job.StatusDetail);
             return job;
         }
     }

@@ -27,7 +27,7 @@ namespace NextDashboard.Test.Integration.Api
 
         private void ThenTheJobShouldBeRefreshed()
         {
-            _result.Status.Contains("SUCCESS").Should().BeTrue();
+            _result.StatusDetail.Contains("SUCCESS").Should().BeTrue();
         }
 
         [Test]

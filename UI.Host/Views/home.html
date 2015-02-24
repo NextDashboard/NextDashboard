@@ -13,16 +13,29 @@
             $.connection.hub.url = "http://localhost:9001/signalr";
             var chat = $.connection.refreshHub;
 
-            chat.client.addNewMessageToPage = function (id, status) {
+            chat.client.addNewMessageToPage = function (id, statusDetail, status) {
                 // Add the message to the page. 
-                console.log(id + status);
-                $jobsList = $('#job_'+id).find("em");
+                console.log(id +" : "+ status);
 
-                $jobsList.html("<em>" + status + "</em>");
+                $jobDiv = $('#job_' + id);
+                $('#job_' + id).addClass('be-still');
+                //   .find("em");
+                if(status == 1) {
+                    $('#job_' + id).removeClass('alert-success');
+                    $('#job_' + id).addClass('alert-danger');
+                } else {
+                    
+                    $('#job_' + id).addClass('alert-success');
+                    $('#job_' + id).removeClass('alert-danger');
+                    
+                }
+                
+                $em = $jobDiv.find("em");
+                $em.html("<em>" + statusDetail + "</em>");
               
             };
 
-            $.connection.hub.logging = true;
+            $.connection.hub.logging = false;
             $.connection.hub.start().done(function () {
             });
         });
@@ -35,29 +48,7 @@
     <title>@Model.title</title>
 </head>
     <body>
-        <nav role="navigation" class="navbar navbar-default">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="#" class="navbar-brand">@Model.title</a>
-            </div>
-            <!-- Collection of nav links and other content for toggling -->
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Logging</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Login</a></li>
-                </ul>
-            </div>
-        </nav>
+
         <div class="page-header">
             <h1>
                 @Model.title
@@ -67,14 +58,11 @@
         <div class="container" ng-controller="GroupController">
             <div class="row jobsList" ng-repeat="job in jobs">
             
-                <div class="jobRow" id='job_{{job.Id}}'>
+                <div class="jobRow alert alert-success" id='job_{{job.Id}}'>
                     
-                    <div class="callout callout-success">
                         <h4> {{job.Name}}</h4>
 
-                        <em>{{job.Status}}</em>
-                        <button class="btn btn-primary pull-right" ng-click="refresh(job.Id)">Refresh</button>
-                    </div>
+                        <em>{{job.StatusDetail}}</em>
                 </div>
 
             </div>

@@ -2,7 +2,8 @@
 {
     public class SampleJob : Job
     {
-        public SampleJob(string id, string name, string status) : base(name, status, id)
+        public SampleJob(string id, string name, string statusDetail, JobStatus status)
+            : base(name, statusDetail, id, status)
         {
             Type = Constants.Jobs.Sample;
         }

@@ -27,10 +27,10 @@ namespace UI.Host.Hubs
             var job = _repository.Select(Int32.Parse(jobId));
             var refresher = _jobRefresherFactory.GetJobRresher(job.Type);
             var refreshedJob = refresher.RefreshJob(job);
-            
+
             _logger.Info(string.Format("Job {0} refreshed sending status {1} to client client {2}. ", jobId, refreshedJob.Status, Context.ConnectionId));
-            
-            Clients.Caller.addNewMessageToPage(refreshedJob.Id, refreshedJob.Status);
+
+            Clients.Caller.addNewMessageToPage(refreshedJob.Id, refreshedJob.StatusDetail, refreshedJob.Status);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using NextDashboard.Application.DomainObjects;
 using NextDashboard.Application.Jobs.Jenkins;
 using NUnit.Framework;
 
@@ -42,7 +43,7 @@ namespace NextDashboard.Test.Unit.Jobs.Jenkins
 
         private JenkinsJob GetJenkinsJob()
         {
-            return new JenkinsJob("1", "TheName", "Passing");
+            return new JenkinsJob("1", "TheName", "Passing", JobStatus.Passing);
         }
     }
 }
