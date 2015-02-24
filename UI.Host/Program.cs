@@ -16,6 +16,7 @@ namespace UI.Host
             using (WebApp.Start<Startup>(baseAddress))
             {
                 _logger.Info("Dashboard WebServer running. Press any key to exit");
+                _logger.Info("Url: {0}",baseAddress);
                 Console.ReadLine();
             }
         }

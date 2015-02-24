@@ -10,7 +10,7 @@
     
     <script type="text/javascript">
         $(function () {
-            $.connection.hub.url = "http://localhost:9000/signalr";
+            $.connection.hub.url = "http://localhost:9001/signalr";
             var chat = $.connection.refreshHub;
 
             chat.client.addNewMessageToPage = function (id, status) {
@@ -22,7 +22,7 @@
               
             };
 
-            $.connection.hub.logging = false;
+            $.connection.hub.logging = true;
             $.connection.hub.start().done(function () {
             });
         });
