@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{23D1AD08-5C20-48E6-9773-5ACB51A5B131}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -13,15 +15,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Unit", "Test.Unit\Test.Unit.csproj", "{483B6361-E625-4CC4-88FF-319F198A6D58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Host", "UI.Host\UI.Host.csproj", "{BA0A66F7-5A95-44B8-9E0B-EB9A0C2CAD86}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Integration", "Test.Integration\Test.Integration.csproj", "{25ED4530-BEE4-44B3-950A-4206D3973655}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{23D1AD08-5C20-48E6-9773-5ACB51A5B131}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +34,6 @@ Global
 		{BA0A66F7-5A95-44B8-9E0B-EB9A0C2CAD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA0A66F7-5A95-44B8-9E0B-EB9A0C2CAD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA0A66F7-5A95-44B8-9E0B-EB9A0C2CAD86}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25ED4530-BEE4-44B3-950A-4206D3973655}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25ED4530-BEE4-44B3-950A-4206D3973655}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25ED4530-BEE4-44B3-950A-4206D3973655}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25ED4530-BEE4-44B3-950A-4206D3973655}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
